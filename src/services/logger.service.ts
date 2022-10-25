@@ -18,7 +18,7 @@ function doLog(level: string, ...args: unknown[]) {
 	fs.appendFileSync('./logs/backend.log', line);
 }
 
-module.exports = {
+export default {
 	debug(...args: unknown[]) {
 		// if (process.env.NODE_NEV === 'production') return
 		doLog('DEBUG', ...args);

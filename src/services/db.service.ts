@@ -1,7 +1,7 @@
-import { MongoClient, MongoClientOptions, Db } from 'mongodb';
+import { MongoClient, Db } from 'mongodb';
 
-import config from './config';
-import logger from './logger-service';
+import config from '../config';
+import logger from './logger.service';
 
 module.exports = {
 	getCollection,
