@@ -6,8 +6,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "npx tsc",
-		"dev": "set NODE_ENV=development && nodemon --ignore \"./data\" server.ts",
-		"start": "set NODE_ENV=development && nodemon server.ts"
+		"dev": "set NODE_ENV=development && nodemon --ignore \"./data\" src/server.ts",
+		"start": "set NODE_ENV=development && nodemon src/server.ts"
 	},
 	"author": "",
 	"license": "ISC",

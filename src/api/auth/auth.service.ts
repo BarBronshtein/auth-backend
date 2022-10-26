@@ -1,18 +1,21 @@
 import Cryptr from 'cryptr';
-
+import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
+
 import { userService } from '../user/user.service';
 import logger from '../../services/logger.service';
 import { User } from '../../models/user.model';
 
-const cryptr = new Cryptr(process.env.SECRET1 || 'Secret-Puk-1234');
+dotenv.config();
+
+const cryptr = new Cryptr(process.env.SECRET1 as string);
 
 async function login(email: string, password: string) {
 	logger.debug(`auth.service - login with email: ${email}`);
 
 	const user = await userService.getByEmail(email);
 	if (!user) throw new Error('Invalid email or password');
-	// TODO: un-comment for real login
+	// Uncomment for real login
 	const match = await bcrypt.compare(password, user.password);
 	if (!match) throw new Error('Invalid email or password');
 

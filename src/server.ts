@@ -1,9 +1,9 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 
-const port = 5050;
+dotenv.config();
 const app = express();
 
 // Express App Config
@@ -23,10 +23,18 @@ else {
 	};
 	app.use(cors(corsOptions));
 }
-app.get('/**', (req: Request, res: Response) => {
-	res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+import authRoutes from './api/auth/auth.routes';
+import userRoutes from './api/user/user.routes';
 
-app.listen(port, () => {
-	console.log(`Server is running at https://localhost:${port}`);
+app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
+
+// app.get('/**', (req: Request, res: Response) => {
+// 	res.sendFile(
+// 		path.join(__dirname, 'public', 'index.html')
+// 	);
+// });
+
+app.listen(process.env.PORT, () => {
+	console.log(`Server is running at http://localhost:${process.env.PORT}`);
 });
