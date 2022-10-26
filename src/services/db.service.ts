@@ -3,16 +3,12 @@ import { MongoClient, Db } from 'mongodb';
 import config from '../config';
 import logger from './logger.service';
 
-module.exports = {
-	getCollection,
-};
-
 // Database name
 const dbName = 'auth_db';
 
 let dbConn: Db | null = null;
 
-async function getCollection(collectionName: string) {
+export async function getCollection(collectionName: string) {
 	try {
 		const db = await connect();
 		const collection = await db.collection(collectionName);
