@@ -15,8 +15,8 @@ async function getUser(req: Request, res: Response) {
 
 async function isEmailOccupied(req: Request, res: Response) {
 	try {
-		const bool = await userService.isEmailOccupied(req.params.email);
-		res.send(bool);
+		const user = await userService.getByEmail(req.params.email);
+		res.send(!!user);
 	} catch (err) {
 		logger.error('Failed to get user', err);
 		res.status(500).send({ err: 'Failed to get user' });

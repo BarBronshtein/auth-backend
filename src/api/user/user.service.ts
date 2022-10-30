@@ -10,7 +10,6 @@ export const userService = {
 	remove,
 	update,
 	add,
-	isEmailOccupied,
 };
 
 async function query(filterBy = {}) {
@@ -44,19 +43,8 @@ async function getById(userId: ObjectId | string) {
 async function getByEmail(email: string) {
 	try {
 		const collection = await getCollection('user');
-		const user = await collection.findOne({ email });
-		return user;
-	} catch (err) {
-		logger.error(`while finding user ${email}`, err);
-		throw err;
-	}
-}
-
-async function isEmailOccupied(email: string) {
-	try {
-		const collection = await getCollection('user');
-		const user = await collection.findOne({ email });
-		return !!user;
+		const user = await collection.find({ email }).toArray();
+		return user?.[0];
 	} catch (err) {
 		logger.error(`while finding user ${email}`, err);
 		throw err;

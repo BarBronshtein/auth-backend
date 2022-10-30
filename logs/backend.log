@@ -1,0 +1,94 @@
+30/10/2022, 11:03:17 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:03:17 - ERROR - Faile to get Mongo collection | {}
+30/10/2022, 11:03:17 - ERROR - while finding user something@real.com | {}
+30/10/2022, 11:03:17 - ERROR - Failed to get user | {}
+30/10/2022, 11:07:04 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:07:04 - ERROR - Faile to get Mongo collection | {}
+30/10/2022, 11:07:04 - ERROR - while finding user something@real.com | {}
+30/10/2022, 11:07:04 - ERROR - Failed to get user | {}
+30/10/2022, 11:10:56 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:10:56 - ERROR - Faile to get Mongo collection | {}
+30/10/2022, 11:10:56 - ERROR - while finding user something@real.com | {}
+30/10/2022, 11:10:56 - ERROR - Failed to get user | {}
+30/10/2022, 11:11:04 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:11:04 - ERROR - Faile to get Mongo collection | {}
+30/10/2022, 11:11:04 - ERROR - while finding user something@real.com | {}
+30/10/2022, 11:11:04 - ERROR - Failed to get user | {}
+30/10/2022, 11:28:43 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:28:43 - ERROR - Faile to get Mongo collection | {}
+30/10/2022, 11:28:43 - ERROR - while finding user something@email.real | {}
+30/10/2022, 11:28:43 - ERROR - Failed to get user | {}
+30/10/2022, 11:31:33 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:31:33 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:31:33 - ERROR - while finding user something@real.com | {}
+30/10/2022, 11:31:33 - ERROR - Failed to get user | {}
+30/10/2022, 11:40:24 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:40:25 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:40:25 - ERROR - while finding user 213123@real.com | {}
+30/10/2022, 11:40:25 - ERROR - Failed to get user | {}
+30/10/2022, 11:40:59 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:41:00 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:41:00 - ERROR - while finding user 213123@real.com | {}
+30/10/2022, 11:41:00 - ERROR - Failed to get user | {}
+30/10/2022, 11:41:21 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:41:21 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:41:21 - ERROR - while finding user 213123@real.co | {}
+30/10/2022, 11:41:21 - ERROR - Failed to get user | {}
+30/10/2022, 11:41:46 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:41:46 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:41:46 - ERROR - while finding user 213123@real.com | {}
+30/10/2022, 11:41:46 - ERROR - Failed to get user | {}
+30/10/2022, 11:42:13 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:42:13 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:42:13 - ERROR - while finding user 213123@real.co | {}
+30/10/2022, 11:42:13 - ERROR - Failed to get user | {}
+30/10/2022, 11:42:25 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:42:25 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:42:25 - ERROR - while finding user 213123@real.com | {}
+30/10/2022, 11:42:25 - ERROR - Failed to get user | {}
+30/10/2022, 11:42:42 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:42:43 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:42:43 - ERROR - while finding user 213123@real.co | {}
+30/10/2022, 11:42:43 - ERROR - Failed to get user | {}
+30/10/2022, 11:43:06 - ERROR - Cannot Connect to DB | {}
+30/10/2022, 11:43:06 - ERROR - Failed to get Mongo collection | {}
+30/10/2022, 11:43:06 - ERROR - while finding user 213123@real.cos | {}
+30/10/2022, 11:43:06 - ERROR - Failed to get user | {}
+30/10/2022, 11:50:52 - ERROR - while finding user sdome@rea.com | {}
+30/10/2022, 11:50:52 - ERROR - Failed to get user | {}
+30/10/2022, 11:56:22 - ERROR - while finding user sdome@rea.co | {"ok":0,"code":8000,"codeName":"AtlasError","connectionGeneration":0}
+30/10/2022, 11:56:22 - ERROR - Failed to get user | {"ok":0,"code":8000,"codeName":"AtlasError","connectionGeneration":0}
+30/10/2022, 11:56:33 - ERROR - while finding user sdome@rea.co | {"ok":0,"code":8000,"codeName":"AtlasError","connectionGeneration":1}
+30/10/2022, 11:56:33 - ERROR - Failed to get user | {"ok":0,"code":8000,"codeName":"AtlasError","connectionGeneration":1}
+30/10/2022, 11:57:20 - ERROR - while finding user sdome@rea.co | {"ok":0,"code":8000,"codeName":"AtlasError","connectionGeneration":2}
+30/10/2022, 11:57:20 - ERROR - Failed to get user | {"ok":0,"code":8000,"codeName":"AtlasError","connectionGeneration":2}
+30/10/2022, 11:58:54 - ERROR - while finding user sdome@rea.cos | {}
+30/10/2022, 11:58:54 - ERROR - Failed to get user | {}
+30/10/2022, 11:59:07 - ERROR - while finding user something@real.com | {}
+30/10/2022, 11:59:07 - ERROR - Failed to get user | {}
+30/10/2022, 11:59:45 - ERROR - while finding user something@real.co | {}
+30/10/2022, 11:59:45 - ERROR - Failed to get user | {}
+30/10/2022, 12:18:16 - ERROR - while finding user something@email.com | {}
+30/10/2022, 12:18:16 - ERROR - Failed to get user | {}
+30/10/2022, 12:18:21 - ERROR - while finding user something@email.com | {}
+30/10/2022, 12:18:21 - ERROR - Failed to get user | {}
+30/10/2022, 12:19:08 - ERROR - while finding user something@email.com | {}
+30/10/2022, 12:19:08 - ERROR - Failed to get user | {}
+30/10/2022, 12:19:23 - ERROR - while finding user something@real.com | {}
+30/10/2022, 12:19:23 - ERROR - Failed to get user | {}
+30/10/2022, 12:21:08 - ERROR - while finding user something@real.co | {}
+30/10/2022, 12:21:08 - ERROR - Failed to get user | {}
+30/10/2022, 12:21:15 - ERROR - while finding user something@real.com | {}
+30/10/2022, 12:21:15 - ERROR - Failed to get user | {}
+30/10/2022, 12:21:43 - ERROR - while finding user something@real.co | {}
+30/10/2022, 12:21:43 - ERROR - Failed to get user | {}
+30/10/2022, 12:44:59 - ERROR - while finding user something@real.com | {}
+30/10/2022, 12:44:59 - ERROR - Failed to get user | {}
+30/10/2022, 12:52:12 - DEBUG - auth.service - signup with email: test@test.test, fullname: Test is in progress
+30/10/2022, 12:52:12 - DEBUG - auth.route - new account created: {"email":"test@test.test","password":"$2b$10$9yQDozTmI/iyyedVyM8TFuNS2yyQ8OQVw4OUI5QpR9hxCVkl39mvy","fullname":"Test is in progress","_id":"635e575cd7bbfd45e8f4adee"}
+30/10/2022, 12:52:12 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 12:52:12 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 12:52:34 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 12:52:34 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 12:53:08 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 12:53:08 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}

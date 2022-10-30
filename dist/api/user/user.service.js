@@ -16,7 +16,14 @@ exports.userService = void 0;
 const db_service_1 = require("../../services/db.service");
 const logger_service_1 = __importDefault(require("../../services/logger.service"));
 const mongodb_1 = require("mongodb");
-exports.userService = { query, getById, getByEmail, remove, update, add };
+exports.userService = {
+    query,
+    getById,
+    getByEmail,
+    remove,
+    update,
+    add,
+};
 function query(filterBy = {}) {
     return __awaiter(this, void 0, void 0, function* () {
         // const criteria = _buildCriteria(filterBy);
@@ -54,8 +61,8 @@ function getByEmail(email) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const collection = yield (0, db_service_1.getCollection)('user');
-            const user = yield collection.findOne({ email });
-            return user;
+            const user = yield collection.find({ email }).toArray();
+            return user === null || user === void 0 ? void 0 : user[0];
         }
         catch (err) {
             logger_service_1.default.error(`while finding user ${email}`, err);

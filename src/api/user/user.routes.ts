@@ -8,7 +8,7 @@ const router = Router();
 
 router.get('/', userController.getUsers);
 router.get('/:id', userController.getUser);
-router.get('/:email', userController.isEmailOccupied);
+router.get('/email/:email', userController.isEmailOccupied);
 router.put('/:id', requireAuth, userController.updateUser);
 router.delete('/:id', requireAuth, userController.removeUser);
 

@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateUser = exports.removeUser = exports.getUsers = exports.getUser = void 0;
+exports.isEmailOccupied = exports.updateUser = exports.removeUser = exports.getUsers = exports.getUser = void 0;
 const user_service_1 = require("./user.service");
 const logger_service_1 = __importDefault(require("../../services/logger.service"));
 function getUser(req, res) {
@@ -28,6 +28,19 @@ function getUser(req, res) {
     });
 }
 exports.getUser = getUser;
+function isEmailOccupied(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const user = yield user_service_1.userService.getByEmail(req.params.email);
+            res.send(!!user);
+        }
+        catch (err) {
+            logger_service_1.default.error('Failed to get user', err);
+            res.status(500).send({ err: 'Failed to get user' });
+        }
+    });
+}
+exports.isEmailOccupied = isEmailOccupied;
 function getUsers(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

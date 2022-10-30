@@ -28,7 +28,7 @@ function getCollection(collectionName) {
             return collection;
         }
         catch (err) {
-            logger_service_1.default.error('Faile to get Mongo collection', err);
+            logger_service_1.default.error('Failed to get Mongo collection', err);
             throw err;
         }
     });
