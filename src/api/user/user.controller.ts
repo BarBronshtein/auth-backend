@@ -13,6 +13,16 @@ async function getUser(req: Request, res: Response) {
 	}
 }
 
+async function isEmailOccupied(req: Request, res: Response) {
+	try {
+		const bool = await userService.isEmailOccupied(req.params.email);
+		res.send(bool);
+	} catch (err) {
+		logger.error('Failed to get user', err);
+		res.status(500).send({ err: 'Failed to get user' });
+	}
+}
+
 async function getUsers(req: Request, res: Response) {
 	try {
 		// const filterBy = {txt: req.query?.txt || ''};
@@ -46,4 +56,4 @@ async function updateUser(req: Request, res: Response) {
 	}
 }
 
-export { getUser, getUsers, removeUser, updateUser };
+export { getUser, getUsers, removeUser, updateUser, isEmailOccupied };

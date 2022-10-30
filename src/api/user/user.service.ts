@@ -3,7 +3,15 @@ import { getCollection } from '../../services/db.service';
 import logger from '../../services/logger.service';
 import { ObjectId } from 'mongodb';
 
-export const userService = { query, getById, getByEmail, remove, update, add };
+export const userService = {
+	query,
+	getById,
+	getByEmail,
+	remove,
+	update,
+	add,
+	isEmailOccupied,
+};
 
 async function query(filterBy = {}) {
 	// const criteria = _buildCriteria(filterBy);
@@ -38,6 +46,17 @@ async function getByEmail(email: string) {
 		const collection = await getCollection('user');
 		const user = await collection.findOne({ email });
 		return user;
+	} catch (err) {
+		logger.error(`while finding user ${email}`, err);
+		throw err;
+	}
+}
+
+async function isEmailOccupied(email: string) {
+	try {
+		const collection = await getCollection('user');
+		const user = await collection.findOne({ email });
+		return !!user;
 	} catch (err) {
 		logger.error(`while finding user ${email}`, err);
 		throw err;

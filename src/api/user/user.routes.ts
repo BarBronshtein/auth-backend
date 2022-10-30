@@ -1,14 +1,15 @@
 import { Router } from 'express';
 import requireAuth from '../../middlewares/require-auth-middleware';
-import { getUser, getUsers, removeUser, updateUser } from './user.controller';
+import * as userController from './user.controller';
 const router = Router();
 
 // middleware that is specific to this router
 // router.use(requireAuth)
 
-router.get('/', getUsers);
-router.get('/:id', getUser);
-router.put('/:id', requireAuth, updateUser);
-router.delete('/:id', requireAuth, removeUser);
+router.get('/', userController.getUsers);
+router.get('/:id', userController.getUser);
+router.get('/:email', userController.isEmailOccupied);
+router.put('/:id', requireAuth, userController.updateUser);
+router.delete('/:id', requireAuth, userController.removeUser);
 
 export default router;
