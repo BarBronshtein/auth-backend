@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userService = void 0;
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const db_service_1 = require("../../services/db.service");
 const logger_service_1 = __importDefault(require("../../services/logger.service"));
 const mongodb_1 = require("mongodb");
@@ -85,6 +86,7 @@ function remove(userId) {
 function update(user) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            const hash = yield bcrypt_1.default.hash(user.password, 10);
             // peek only updatable fields!
             const userToSave = {
                 email: user.email,
@@ -92,12 +94,12 @@ function update(user) {
                 bio: user.bio,
                 phone: user.phone,
                 photo: user.photo,
-                password: user.password,
-                // TODO: add ability to edit password aswell
+                password: hash,
             };
             const collection = yield (0, db_service_1.getCollection)('user');
             yield collection.updateOne({ _id: new mongodb_1.ObjectId(user._id) }, { $set: userToSave });
             userToSave._id = new mongodb_1.ObjectId(user._id);
+            delete userToSave.password;
             return userToSave;
         }
         catch (err) {

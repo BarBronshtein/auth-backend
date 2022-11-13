@@ -1,8 +1,8 @@
+import bcrypt from 'bcrypt';
 import { User } from './../../models/user.model';
 import { getCollection } from '../../services/db.service';
 import logger from '../../services/logger.service';
 import { ObjectId } from 'mongodb';
-
 export const userService = {
 	query,
 	getById,
@@ -63,6 +63,7 @@ async function remove(userId: ObjectId | string) {
 
 async function update(user: User) {
 	try {
+		const hash = await bcrypt.hash(user.password as string, 10);
 		// peek only updatable fields!
 		const userToSave: User = {
 			email: user.email,
@@ -70,8 +71,7 @@ async function update(user: User) {
 			bio: user.bio,
 			phone: user.phone,
 			photo: user.photo,
-			password: user.password,
-			// TODO: add ability to edit password aswell
+			password: hash,
 		};
 		const collection = await getCollection('user');
 		await collection.updateOne(
@@ -79,6 +79,7 @@ async function update(user: User) {
 			{ $set: userToSave }
 		);
 		userToSave._id = new ObjectId(user._id);
+		delete userToSave.password;
 		return userToSave;
 	} catch (err) {
 		logger.error(`cannot update user ${user._id}`, err);

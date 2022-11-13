@@ -92,3 +92,41 @@
 30/10/2022, 12:52:34 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
 30/10/2022, 12:53:08 - DEBUG - auth.service - login with email: test@test.test
 30/10/2022, 12:53:08 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 12:56:11 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 12:56:11 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 13:02:33 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:02:33 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 13:02:59 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:03:00 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 13:05:21 - DEBUG - auth.service - login with email: sadfkop@gdslkm.sada
+30/10/2022, 13:05:21 - ERROR - Failed to Login Error: Invalid email or password
+30/10/2022, 13:05:31 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:05:31 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 13:16:42 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:16:42 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 13:16:55 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:16:55 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 13:17:07 - DEBUG - auth.service - signup with email: bar@bar.bar, fullname: bar
+30/10/2022, 13:17:07 - DEBUG - auth.route - new account created: {"email":"bar@bar.bar","password":"$2b$10$ZG6UOD2e8QwQ6OzvkFv2S.7uA3ZEz8gE01ReLndHlPfr1Y/ByGm4a","fullname":"bar","_id":"635e5d3304c01911491d1186"}
+30/10/2022, 13:17:07 - DEBUG - auth.service - login with email: bar@bar.bar
+30/10/2022, 13:17:07 - INFO - User login:  | {"_id":"635e5d3304c01911491d1186","email":"bar@bar.bar","fullname":"bar"}
+30/10/2022, 13:17:24 - DEBUG - auth.service - login with email: bar@bar.bar
+30/10/2022, 13:17:24 - INFO - User login:  | {"_id":"635e5d3304c01911491d1186","email":"bar@bar.bar","fullname":"bar"}
+30/10/2022, 13:18:10 - DEBUG - auth.service - login with email: bar@bar.bar
+30/10/2022, 13:18:10 - INFO - User login:  | {"_id":"635e5d3304c01911491d1186","email":"bar@bar.bar","fullname":"bar"}
+30/10/2022, 13:18:42 - DEBUG - auth.service - login with email: bar@bar.bar
+30/10/2022, 13:18:43 - INFO - User login:  | {"_id":"635e5d3304c01911491d1186","email":"bar@bar.bar","fullname":"bar"}
+30/10/2022, 13:20:06 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:20:06 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress"}
+30/10/2022, 13:35:08 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:35:08 - ERROR - Failed to Login Error: Invalid email or password
+30/10/2022, 13:35:13 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:35:13 - ERROR - Failed to Login Error: Invalid email or password
+30/10/2022, 13:36:32 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 13:36:33 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress","bio":"something in my bio","phone":null,"photo":null}
+30/10/2022, 14:31:06 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 14:31:06 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress","bio":"something in my bio","phone":"1234567890","photo":null}
+30/10/2022, 14:34:19 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 14:34:19 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress","bio":"something in my bio","phone":"1234567890","photo":null}
+30/10/2022, 14:34:36 - DEBUG - auth.service - login with email: test@test.test
+30/10/2022, 14:34:36 - INFO - User login:  | {"_id":"635e575cd7bbfd45e8f4adee","email":"test@test.test","fullname":"Test is in progress","bio":"something in my bio","phone":"1234567890","photo":null}

@@ -5,7 +5,7 @@ export interface User {
 	bio?: string;
 	fullname: string;
 	email: string;
-	password: string;
+	password?: string;
 	phone?: string;
 	_id?: ObjectId;
 }

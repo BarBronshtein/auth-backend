@@ -28,7 +28,6 @@ async function signup(req: Request, res: Response) {
 		const loginToken = authService.getLoginToken(user as User);
 		logger.info('User login: ', user);
 		res.cookie('loginToken', loginToken);
-
 		res.json(user);
 	} catch (err) {
 		logger.error('Failed to signup ' + err);
