@@ -1,0 +1,1 @@
+import s from"./personal-info-edit.35a2dbdc.js";import a from"./personal-info.a9666b02.js";import{k as e,l as m,q as p}from"./index.3a22eb0a.js";const o=r=>t=>{const n=e(r);n.use(m()),n.mount(t)},l=o(p),u=o(a),I=o(s);export{l as LoginForm,u as PersonalInfo,I as PersonalInfoEdit};
