@@ -42,6 +42,7 @@ if (process.env.NODE_ENV === 'production') {
 		credentials: true,
 	};
 	app.use(cors(corsOptions));
+	app.use(express.static(path.resolve(__dirname, 'public')));
 }
 import authRoutes from './api/auth/auth.routes';
 import userRoutes from './api/user/user.routes';
@@ -53,6 +54,6 @@ app.get('/**', (req: Request, res: Response) => {
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 5050, () => {
 	console.log(`Server is running at http://localhost:${process.env.PORT}`);
 });
