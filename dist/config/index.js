@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let dbURL;
-if (false && process.env.NODE_ENV === 'production')
+if (process.env.NODE_ENV === 'production')
     dbURL = process.env.DB_CONN_STRING;
 else
     dbURL = 'mongodb://localhost:27017';
