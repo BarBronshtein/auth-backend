@@ -1,7 +1,7 @@
 import fs from 'fs';
 
 const logsDir = './logs';
-if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir);
+if (!fs.existsSync(logsDir) && !process.env.CYCLIC_URL) fs.mkdirSync(logsDir);
 
 // Define the time format
 function getTime() {
