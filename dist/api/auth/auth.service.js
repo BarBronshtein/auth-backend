@@ -22,7 +22,8 @@ dotenv_1.default.config();
 const cryptr = new cryptr_1.default(process.env.SECRET1);
 function login(email, password) {
     return __awaiter(this, void 0, void 0, function* () {
-        logger_service_1.default.debug(`auth.service - login with email: ${email}`);
+        if (!process.env.CYCLIC_URL)
+            logger_service_1.default.debug(`auth.service - login with email: ${email}`);
         const user = yield user_service_1.userService.getByEmail(email);
         if (!user)
             throw new Error('Invalid email or password');
@@ -37,7 +38,8 @@ function login(email, password) {
 function signup(email, password, fullname) {
     return __awaiter(this, void 0, void 0, function* () {
         const saltRounds = 10;
-        logger_service_1.default.debug(`auth.service - signup with email: ${email}, fullname: ${fullname}`);
+        if (!process.env.CYCLIC_URL)
+            logger_service_1.default.debug(`auth.service - signup with email: ${email}, fullname: ${fullname}`);
         // if (!email || !password || !fullname) // front handles field requirements
         //   throw new Error('fullname, email and password are required!');
         const hash = yield bcrypt_1.default.hash(password, saltRounds);

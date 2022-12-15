@@ -22,7 +22,8 @@ function getUser(req, res) {
             res.send(user);
         }
         catch (err) {
-            logger_service_1.default.error('Failed to get user', err);
+            if (!process.env.CYCLIC_URL)
+                logger_service_1.default.error('Failed to get user', err);
             res.status(500).send({ err: 'Failed to get user' });
         }
     });
@@ -35,7 +36,8 @@ function isEmailOccupied(req, res) {
             res.send(!!user);
         }
         catch (err) {
-            logger_service_1.default.error('Failed to get user', err);
+            if (!process.env.CYCLIC_URL)
+                logger_service_1.default.error('Failed to get user', err);
             res.status(500).send({ err: 'Failed to get user' });
         }
     });
@@ -50,7 +52,8 @@ function getUsers(req, res) {
             res.send(users);
         }
         catch (err) {
-            logger_service_1.default.error('Failed to get users', err);
+            if (!process.env.CYCLIC_URL)
+                logger_service_1.default.error('Failed to get users', err);
             res.status(500).send({ err: 'Failed to get users' });
         }
     });
@@ -63,7 +66,8 @@ function removeUser(req, res) {
             res.send({ msg: 'Deleted successfully' });
         }
         catch (err) {
-            logger_service_1.default.error('Failed to delete user', err);
+            if (!process.env.CYCLIC_URL)
+                logger_service_1.default.error('Failed to delete user', err);
             res.status(500).send({ err: 'Failed to delete user' });
         }
     });
@@ -77,7 +81,8 @@ function updateUser(req, res) {
             res.send(savedUser);
         }
         catch (err) {
-            logger_service_1.default.error('Failed to update user', err);
+            if (!process.env.CYCLIC_URL)
+                logger_service_1.default.error('Failed to update user', err);
             res.status(500).send({ err: 'Failed to update user' });
         }
     });

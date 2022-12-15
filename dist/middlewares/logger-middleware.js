@@ -15,7 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const logger_service_1 = __importDefault(require("../services/logger.service"));
 function log(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
-        logger_service_1.default.info('Req was made');
+        if (!process.env.CYCLIC_URL)
+            logger_service_1.default.info('Req was made');
         next();
     });
 }
