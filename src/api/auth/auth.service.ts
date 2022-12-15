@@ -11,7 +11,8 @@ dotenv.config();
 const cryptr = new Cryptr(process.env.SECRET1 as string);
 
 async function login(email: string, password: string) {
-	logger.debug(`auth.service - login with email: ${email}`);
+	if (!process.env.CYCLIC_URL)
+		logger.debug(`auth.service - login with email: ${email}`);
 
 	const user = await userService.getByEmail(email);
 	if (!user) throw new Error('Invalid email or password');
@@ -25,10 +26,11 @@ async function login(email: string, password: string) {
 
 async function signup(email: string, password: string, fullname: string) {
 	const saltRounds = 10;
+	if (!process.env.CYCLIC_URL)
+		logger.debug(
+			`auth.service - signup with email: ${email}, fullname: ${fullname}`
+		);
 
-	logger.debug(
-		`auth.service - signup with email: ${email}, fullname: ${fullname}`
-	);
 	// if (!email || !password || !fullname) // front handles field requirements
 	//   throw new Error('fullname, email and password are required!');
 

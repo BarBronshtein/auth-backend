@@ -24,7 +24,7 @@ async function query(filterBy = {}) {
 		});
 		return users;
 	} catch (err) {
-		logger.error('cannot find users', err);
+		if (!process.env.CYCLIC_URL) logger.error('cannot find users', err);
 		throw err;
 	}
 }
@@ -36,7 +36,8 @@ async function getById(userId: ObjectId | string) {
 		delete user?.password;
 		return user;
 	} catch (err) {
-		logger.error(`while finding user ${userId}`, err);
+		if (!process.env.CYCLIC_URL)
+			logger.error(`while finding user ${userId}`, err);
 		throw err;
 	}
 }
@@ -46,7 +47,7 @@ async function getByEmail(email: string) {
 		const user = await collection.find({ email }).toArray();
 		return user?.[0];
 	} catch (err) {
-		logger.error(`while finding user ${email}`, err);
+		if (!process.env.CYCLIC_URL) logger.error(`while finding user ${email}`, err);
 		throw err;
 	}
 }
@@ -56,7 +57,8 @@ async function remove(userId: ObjectId | string) {
 		const collection = await getCollection('user');
 		await collection.deleteOne({ _id: new ObjectId(userId) });
 	} catch (err) {
-		logger.error(`cannot remove user ${userId}`, err);
+		if (!process.env.CYCLIC_URL)
+			logger.error(`cannot remove user ${userId}`, err);
 		throw err;
 	}
 }
@@ -82,7 +84,8 @@ async function update(user: User) {
 		delete userToSave.password;
 		return userToSave;
 	} catch (err) {
-		logger.error(`cannot update user ${user._id}`, err);
+		if (!process.env.CYCLIC_URL)
+			logger.error(`cannot update user ${user._id}`, err);
 		throw err;
 	}
 }
@@ -99,7 +102,7 @@ async function add(user: User) {
 		await collection.insertOne(userToAdd);
 		return userToAdd;
 	} catch (err) {
-		logger.error('cannot insert user', err);
+		if (!process.env.CYCLIC_URL) logger.error('cannot insert user', err);
 		throw err;
 	}
 }

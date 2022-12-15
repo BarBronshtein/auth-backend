@@ -8,7 +8,7 @@ async function getUser(req: Request, res: Response) {
 		const user = await userService.getById(req.params.id);
 		res.send(user);
 	} catch (err) {
-		logger.error('Failed to get user', err);
+		if (!process.env.CYCLIC_URL) logger.error('Failed to get user', err);
 		res.status(500).send({ err: 'Failed to get user' });
 	}
 }
@@ -18,7 +18,7 @@ async function isEmailOccupied(req: Request, res: Response) {
 		const user = await userService.getByEmail(req.params.email);
 		res.send(!!user);
 	} catch (err) {
-		logger.error('Failed to get user', err);
+		if (!process.env.CYCLIC_URL) logger.error('Failed to get user', err);
 		res.status(500).send({ err: 'Failed to get user' });
 	}
 }
@@ -30,7 +30,7 @@ async function getUsers(req: Request, res: Response) {
 		const users = await userService.query();
 		res.send(users);
 	} catch (err) {
-		logger.error('Failed to get users', err);
+		if (!process.env.CYCLIC_URL) logger.error('Failed to get users', err);
 		res.status(500).send({ err: 'Failed to get users' });
 	}
 }
@@ -40,7 +40,7 @@ async function removeUser(req: Request, res: Response) {
 		await userService.remove(req.params.id);
 		res.send({ msg: 'Deleted successfully' });
 	} catch (err) {
-		logger.error('Failed to delete user', err);
+		if (!process.env.CYCLIC_URL) logger.error('Failed to delete user', err);
 		res.status(500).send({ err: 'Failed to delete user' });
 	}
 }
@@ -51,7 +51,7 @@ async function updateUser(req: Request, res: Response) {
 		const savedUser = await userService.update(user);
 		res.send(savedUser);
 	} catch (err) {
-		logger.error('Failed to update user', err);
+		if (!process.env.CYCLIC_URL) logger.error('Failed to update user', err);
 		res.status(500).send({ err: 'Failed to update user' });
 	}
 }
