@@ -22,6 +22,7 @@ const corsOptions = {
 		'http://localhost:5173',
 		'http://localhost:5174',
 		'http://auth-app-front.s3-website-eu-west-1.amazonaws.com',
+		'https://d13brhpf8ykarf.cloudfront.net',
 	],
 	credentials: true,
 };
