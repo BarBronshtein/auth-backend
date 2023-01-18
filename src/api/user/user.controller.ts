@@ -27,6 +27,7 @@ async function getUsers(req: Request, res: Response) {
 	try {
 		// const filterBy = {txt: req.query?.txt || ''};
 		// const users = await userService.query(filterBy);
+
 		const users = await userService.query();
 		res.send(users);
 	} catch (err) {

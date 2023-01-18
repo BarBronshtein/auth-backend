@@ -45,4 +45,12 @@ async function logout(req: Request, res: Response) {
 	}
 }
 
-export { login, signup, logout };
+function authenticate(req: Request, res: Response) {
+	try {
+		res.status(200).send(authService.validateToken(req.cookies.loginToken));
+	} catch (err) {
+		res.status(500).send({ err: 'Authentication failed' });
+	}
+}
+
+export { login, signup, logout, authenticate };
