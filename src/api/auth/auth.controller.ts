@@ -49,6 +49,7 @@ function authenticate(req: Request, res: Response) {
 	try {
 		res.status(200).send(authService.validateToken(req.cookies.loginToken));
 	} catch (err) {
+		logger.error('Authentication failed', err);
 		res.status(500).send({ err: 'Authentication failed' });
 	}
 }
