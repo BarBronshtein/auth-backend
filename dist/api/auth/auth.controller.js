@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.logout = exports.signup = exports.login = void 0;
+exports.authenticate = exports.logout = exports.signup = exports.login = void 0;
 const auth_service_1 = require("./auth.service");
 const logger_service_1 = __importDefault(require("../../services/logger.service"));
 function login(req, res) {
@@ -70,3 +70,13 @@ function logout(req, res) {
     });
 }
 exports.logout = logout;
+function authenticate(req, res) {
+    try {
+        res.status(200).send(auth_service_1.authService.validateToken(req.cookies.loginToken));
+    }
+    catch (err) {
+        logger_service_1.default.error('Authentication failed', err);
+        res.status(500).send({ err: 'Authentication failed' });
+    }
+}
+exports.authenticate = authenticate;
