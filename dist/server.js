@@ -16,6 +16,8 @@ const corsOptions = {
     origin: [
         'http://127.0.0.1:80',
         'http://localhost:80',
+        'http://localhost:5173',
+        'http://127.0.0.1:5173',
         'http://194.233.167.205',
         'http://auth-app-front.s3-website-eu-west-1.amazonaws.com',
         'https://d13brhpf8ykarf.cloudfront.net',
