@@ -1,7 +1,7 @@
 import fs from 'fs';
 
-const logsDir = './logs';
-if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir);
+// const logsDir = './logs';
+// if (!fs.existsSync(logsDir)) fs.mkdirSync(logsDir);
 
 // Define the time format
 function getTime() {
@@ -15,7 +15,7 @@ function doLog(level: string, ...args: unknown[]) {
 	let line = strs.join(' | ');
 	line = `${getTime()} - ${level} - ${line}\n`;
 	console.log(line);
-	fs.appendFileSync('./logs/backend.log', line);
+	// fs.appendFileSync('./logs/backend.log', line);
 }
 
 export default {
