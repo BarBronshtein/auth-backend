@@ -28,8 +28,7 @@ function getCollection(collectionName) {
             return collection;
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error('Failed to get Mongo collection', err);
+            logger_service_1.default.error('Failed to get Mongo collection', err);
             throw err;
         }
     });
@@ -46,8 +45,7 @@ function connect() {
             return db;
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error('Cannot Connect to DB', err);
+            logger_service_1.default.error('Cannot Connect to DB', err);
             throw err;
         }
     });

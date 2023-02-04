@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const logsDir = './logs';
-if (!fs_1.default.existsSync(logsDir) && !process.env.CYCLIC_URL)
+if (!fs_1.default.existsSync(logsDir))
     fs_1.default.mkdirSync(logsDir);
 // Define the time format
 function getTime() {

@@ -8,11 +8,11 @@ async function login(req: Request, res: Response) {
 	try {
 		const user = await authService.login(email, password);
 		const loginToken = authService.getLoginToken(user as User);
-		if (!process.env.CYCLIC_URL) logger.info('User login: ', user);
+		logger.info('User login: ', user);
 		res.cookie('loginToken', loginToken);
 		res.json(user);
 	} catch (err) {
-		if (!process.env.CYCLIC_URL) logger.error('Failed to Login ' + err);
+		logger.error('Failed to Login ' + err);
 		res.status(401).send({ err: 'Failed to Login' });
 	}
 }
@@ -23,15 +23,15 @@ async function signup(req: Request, res: Response) {
 		// Never log passwords
 		// logger.debug(fullname + ', ' + email + ', ' + password)
 		const account = await authService.signup(email, password, fullname);
-		if (!process.env.CYCLIC_URL)
-			logger.debug(`auth.route - new account created: ` + JSON.stringify(account));
+
+		logger.debug(`auth.route - new account created: ` + JSON.stringify(account));
 		const user = await authService.login(email, password);
 		const loginToken = authService.getLoginToken(user as User);
-		if (!process.env.CYCLIC_URL) logger.info('User login: ', user);
+		logger.info('User login: ', user);
 		res.cookie('loginToken', loginToken);
 		res.json(user);
 	} catch (err) {
-		if (!process.env.CYCLIC_URL) logger.error('Failed to signup ' + err);
+		logger.error('Failed to signup ' + err);
 		res.status(500).send({ err: 'Failed to signup' });
 	}
 }

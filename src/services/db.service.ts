@@ -14,8 +14,7 @@ export async function getCollection(collectionName: string) {
 		const collection = db.collection(collectionName);
 		return collection;
 	} catch (err) {
-		if (!process.env.CYCLIC_URL)
-			logger.error('Failed to get Mongo collection', err);
+		logger.error('Failed to get Mongo collection', err);
 		throw err;
 	}
 }
@@ -28,7 +27,7 @@ async function connect() {
 		dbConn = db;
 		return db;
 	} catch (err) {
-		if (!process.env.CYCLIC_URL) logger.error('Cannot Connect to DB', err);
+		logger.error('Cannot Connect to DB', err);
 		throw err;
 	}
 }

@@ -39,8 +39,7 @@ function query(filterBy = {}) {
             return users;
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error('cannot find users', err);
+            logger_service_1.default.error('cannot find users', err);
             throw err;
         }
     });
@@ -54,8 +53,7 @@ function getById(userId) {
             return user;
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error(`while finding user ${userId}`, err);
+            logger_service_1.default.error(`while finding user ${userId}`, err);
             throw err;
         }
     });
@@ -68,8 +66,7 @@ function getByEmail(email) {
             return user === null || user === void 0 ? void 0 : user[0];
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error(`while finding user ${email}`, err);
+            logger_service_1.default.error(`while finding user ${email}`, err);
             throw err;
         }
     });
@@ -81,8 +78,7 @@ function remove(userId) {
             yield collection.deleteOne({ _id: new mongodb_1.ObjectId(userId) });
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error(`cannot remove user ${userId}`, err);
+            logger_service_1.default.error(`cannot remove user ${userId}`, err);
             throw err;
         }
     });
@@ -107,8 +103,7 @@ function update(user) {
             return userToSave;
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error(`cannot update user ${user._id}`, err);
+            logger_service_1.default.error(`cannot update user ${user._id}`, err);
             throw err;
         }
     });
@@ -127,8 +122,7 @@ function add(user) {
             return userToAdd;
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error('cannot insert user', err);
+            logger_service_1.default.error('cannot insert user', err);
             throw err;
         }
     });

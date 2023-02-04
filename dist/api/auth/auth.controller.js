@@ -21,14 +21,12 @@ function login(req, res) {
         try {
             const user = yield auth_service_1.authService.login(email, password);
             const loginToken = auth_service_1.authService.getLoginToken(user);
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.info('User login: ', user);
+            logger_service_1.default.info('User login: ', user);
             res.cookie('loginToken', loginToken);
             res.json(user);
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error('Failed to Login ' + err);
+            logger_service_1.default.error('Failed to Login ' + err);
             res.status(401).send({ err: 'Failed to Login' });
         }
     });
@@ -41,18 +39,15 @@ function signup(req, res) {
             // Never log passwords
             // logger.debug(fullname + ', ' + email + ', ' + password)
             const account = yield auth_service_1.authService.signup(email, password, fullname);
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.debug(`auth.route - new account created: ` + JSON.stringify(account));
+            logger_service_1.default.debug(`auth.route - new account created: ` + JSON.stringify(account));
             const user = yield auth_service_1.authService.login(email, password);
             const loginToken = auth_service_1.authService.getLoginToken(user);
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.info('User login: ', user);
+            logger_service_1.default.info('User login: ', user);
             res.cookie('loginToken', loginToken);
             res.json(user);
         }
         catch (err) {
-            if (!process.env.CYCLIC_URL)
-                logger_service_1.default.error('Failed to signup ' + err);
+            logger_service_1.default.error('Failed to signup ' + err);
             res.status(500).send({ err: 'Failed to signup' });
         }
     });
