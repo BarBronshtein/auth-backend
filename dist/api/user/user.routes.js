@@ -27,11 +27,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+const logger_middleware_1 = __importDefault(require("../../middlewares/logger-middleware"));
 const require_auth_middleware_1 = __importDefault(require("../../middlewares/require-auth-middleware"));
 const userController = __importStar(require("./user.controller"));
 const router = (0, express_1.Router)();
 // middleware that is specific to this router
-// router.use(requireAuth)
+router.use(logger_middleware_1.default);
 router.get('/', userController.getUsers);
 router.get('/:id', userController.getUser);
 router.get('/email/:email', userController.isEmailOccupied);

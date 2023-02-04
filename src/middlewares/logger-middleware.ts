@@ -7,4 +7,4 @@ async function log(req: Request, res: Response, next: NextFunction) {
 	next();
 }
 
-module.exports = { log };
+export default log;

@@ -1,10 +1,11 @@
 import { Router } from 'express';
+import log from '../../middlewares/logger-middleware';
 import requireAuth from '../../middlewares/require-auth-middleware';
 import * as userController from './user.controller';
 const router = Router();
 
 // middleware that is specific to this router
-// router.use(requireAuth)
+router.use(log);
 
 router.get('/', userController.getUsers);
 router.get('/:id', userController.getUser);
