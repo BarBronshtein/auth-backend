@@ -3,9 +3,12 @@ import { User } from './../../models/user.model';
 import { getCollection } from '../../services/db.service';
 import logger from '../../services/logger.service';
 import { ObjectId } from 'mongodb';
+import { GoogleUser } from '../auth/auth.service';
+
 export const userService = {
 	query,
 	getById,
+	getByGoogleId,
 	getByEmail,
 	remove,
 	update,
@@ -51,6 +54,17 @@ async function getByEmail(email: string) {
 	}
 }
 
+async function getByGoogleId(googleId: string) {
+	try {
+		const collection = await getCollection('user');
+		const user = await collection.find({ googleId }).toArray();
+		return user?.[0];
+	} catch (err) {
+		logger.error(`cannot find user ${googleId}`, err);
+		throw err;
+	}
+}
+
 async function remove(userId: ObjectId | string) {
 	try {
 		const collection = await getCollection('user');
@@ -61,11 +75,12 @@ async function remove(userId: ObjectId | string) {
 	}
 }
 
-async function update(user: User) {
+async function update(user: User | GoogleUser) {
 	try {
 		const hash = await bcrypt.hash(user.password as string, 10);
 		// peek only updatable fields!
-		const userToSave: User = {
+		const userToSave: GoogleUser | User = {
+			googleId: (<GoogleUser>user).googleId,
 			email: user.email,
 			fullname: user.fullname,
 			bio: user.bio,
@@ -91,9 +106,11 @@ async function add(user: User) {
 	try {
 		// peek only updatable fields!
 		const userToAdd = {
+			googleId: (<GoogleUser>user).googleId,
 			email: user.email,
 			password: user.password,
 			fullname: user.fullname,
+			photo: user.photo,
 		};
 		const collection = await getCollection('user');
 		await collection.insertOne(userToAdd);

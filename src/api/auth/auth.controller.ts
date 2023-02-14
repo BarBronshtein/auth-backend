@@ -1,5 +1,5 @@
 import { User } from './../../models/user.model';
-import { authService } from './auth.service';
+import { authService, GoogleUser } from './auth.service';
 import logger from '../../services/logger.service';
 import { Request, Response } from 'express';
 
@@ -11,6 +11,19 @@ async function login(req: Request, res: Response) {
 		logger.info('User login: ', user);
 		res.cookie('loginToken', loginToken);
 		res.json(user);
+	} catch (err) {
+		logger.error('Failed to Login ' + err);
+		res.status(401).send({ err: 'Failed to Login' });
+	}
+}
+async function googleLogin(req: Request, res: Response) {
+	const user: GoogleUser = req.body;
+	try {
+		const userToSend: User = await authService.googleLogin(user);
+		const loginToken = authService.getLoginToken(userToSend);
+		logger.info('User login: ', userToSend);
+		res.cookie('loginToken', loginToken);
+		res.json(userToSend);
 	} catch (err) {
 		logger.error('Failed to Login ' + err);
 		res.status(401).send({ err: 'Failed to Login' });
@@ -54,4 +67,4 @@ function authenticate(req: Request, res: Response) {
 	}
 }
 
-export { login, signup, logout, authenticate };
+export { login, signup, logout, authenticate, googleLogin };
