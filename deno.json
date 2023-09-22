@@ -5,6 +5,7 @@
 		"mongodb": "npm:mongodb@^4.11.0",
 		"cookie-parser": "npm:cookie-parser@^1.4.6",
 		"cryptr": "npm:cryptr@^6.0.3",
+		"bcrypt": "https://deno.land/x/bcrypt/mod.ts",
 		"express": "npm:express@^4.18.2"
 	}
 }
