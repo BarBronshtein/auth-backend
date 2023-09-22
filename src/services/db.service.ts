@@ -1,12 +1,12 @@
 import { MongoClient, Db } from 'mongodb';
-//import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import config from '../config';
 import logger from './logger.service';
 
 // Database name
 
 let dbConn: Db | null = null;
-//dotenv.config();
+dotenv.config();
 
 export async function getCollection(collectionName: string) {
 	try {
