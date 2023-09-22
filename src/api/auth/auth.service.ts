@@ -1,5 +1,5 @@
 import Cryptr from 'cryptr';
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 
 import { userService } from '../user/user.service';
@@ -10,7 +10,7 @@ export interface GoogleUser extends User {
 	googleId: string;
 }
 
-dotenv.config();
+//dotenv.config();
 
 const cryptr = new Cryptr(process.env.SECRET1 as string);
 
