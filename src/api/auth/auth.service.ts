@@ -1,6 +1,6 @@
 import Cryptr from 'cryptr';
 import dotenv from 'dotenv';
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 
 import { userService } from '../user/user.service';
 import logger from '../../services/logger.service';

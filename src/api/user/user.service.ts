@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 import { User } from './../../models/user.model';
 import { getCollection } from '../../services/db.service';
 import logger from '../../services/logger.service';
