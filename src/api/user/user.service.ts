@@ -19,13 +19,12 @@ async function query(filterBy = {}) {
 	// const criteria = _buildCriteria(filterBy);
 	try {
 		const collection = await getCollection('user');
-		var users = await collection.find().toArray();
-		users = users.map(user => {
+		const users = await collection.find().toArray();
+		return users.map(user => {
 			delete user.password;
 			// user.createdAt = ObjectId(user._id).getTimestamp();
 			return user;
 		});
-		return users;
 	} catch (err) {
 		logger.error('cannot find users', err);
 		throw err;
