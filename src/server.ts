@@ -35,6 +35,6 @@ app.use('/api/user', userRoutes);
 // 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
 
-app.listen(process.env.PORT || 5050, () => {
-	console.log(`Server is running at http://localhost:${process.env.PORT}`);
+app.listen(5050, () => {
+	console.log(`Server is running at http://localhost:5050`);
 });

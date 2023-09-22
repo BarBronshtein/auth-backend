@@ -23,7 +23,7 @@ async function connect() {
 	if (dbConn) return dbConn;
 	try {
 		const client = new MongoClient(config.dbURL);
-		const db = client.db(process.env.DB_NAME);
+		const db = client.db(process?.env?.DB_NAME ?? Deno.env.get('DB_NAME'));
 		dbConn = db;
 		return db;
 	} catch (err) {

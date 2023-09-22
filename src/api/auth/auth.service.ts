@@ -12,7 +12,9 @@ export interface GoogleUser extends User {
 
 dotenv.config();
 
-const cryptr = new Cryptr(process.env.SECRET1 as string);
+const cryptr = new Cryptr(
+	process?.env?.SECRET1 ?? (Deno.env.get('SECRET1') as string)
+);
 
 async function login(email: string, password: string) {
 	logger.debug(`auth.service - login with email: ${email}`);
